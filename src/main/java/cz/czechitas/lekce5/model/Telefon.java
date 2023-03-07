@@ -10,14 +10,15 @@ public class Telefon {
         return predcisli;
     }
 
-    public void setPredcisli(String predcisli) {
-        this.predcisli = predcisli;
-    }
 
     public String getTelefonniCislo() {
         return telefonniCislo;
     }
 
+    @Override
+    public String toString() {
+        return predcisli + " " + telefonniCislo;
+    }
     public void setTelefonniCislo(String telefonniCislo) {
         Objects.requireNonNull(telefonniCislo);
         if (telefonniCislo.isBlank()) {
@@ -25,5 +26,13 @@ public class Telefon {
             return;
         }
         this.telefonniCislo = telefonniCislo;
+    }
+    public void setPredcisli(String predcisli) {
+        Objects.requireNonNull(predcisli);
+        if (predcisli.isBlank()) {
+            System.err.println("Předčíslí musí být vyplněno.");
+            return;
+        }
+        this.predcisli = predcisli;
     }
 }

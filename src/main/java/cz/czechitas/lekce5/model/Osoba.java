@@ -6,30 +6,43 @@ public class Osoba {
     private String jmeno;
     private String prijmeni;
     private String rodneCislo;
-
     private Telefon telefon;
+    private boolean zena;
+    private String soukromyEmail;
+    private String pracovniEmail;
 
-    public void setJmeno(String jmeno) {
-        Objects.requireNonNull(jmeno);
+
+    public void setCeleJmeno(String jmeno) {
+        Objects.requireNonNull(jmeno); //když nechci, aby se mi tam objevila null
         if (jmeno.isBlank()) {
             System.err.println("Jméno nemůže být prázdné.");
+            System.out.println("Jméno nemůže být prázdné.");
             return;
         }
         this.jmeno = jmeno;
     }
 
-    public String getJmeno() {
-        return jmeno;
+    public String getSoukromyEmail() {
+        return soukromyEmail;
     }
 
-    public String getPrijmeni() {
-        return prijmeni;
+    public void setSoukromyEmail(String soukromyEmail) {
+        this.soukromyEmail = soukromyEmail;
+    }
+
+    public String getPracovniEmail() {
+        return pracovniEmail;
+    }
+
+    public void setPracovniEmail(String pracovniEmail) {
+        this.pracovniEmail = pracovniEmail;
     }
 
     public void setPrijmeni(String prijmeni) {
         Objects.requireNonNull(prijmeni);
         if (prijmeni.isBlank()) {
             System.err.println("Příjmení nemůže být prázdné.");
+            System.out.println("Příjmení nemůže být prázdné.");
             return;
         }
         this.prijmeni = prijmeni;
@@ -63,5 +76,9 @@ public class Osoba {
     public String toString() {
         return jmeno + " " + prijmeni + " (" + rodneCislo + ")";
     }
+
+    public void setZena(boolean b) {
+    }
+
 }
 
